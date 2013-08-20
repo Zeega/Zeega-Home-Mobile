@@ -8,10 +8,13 @@ define([
 function( app, ZeegaViewer, ZeegaCardView ) {
 
     var ZeegaItem = Backbone.Model.extend({
+        
         url: function(){
             var https = app.metadata.api.replace("https", "http").replace("http","https");
+
             return https + "projects/" + this.id;
         },
+        
         initialize: function(){
             this.card = new ZeegaCardView({ model: this });
         }
@@ -51,6 +54,7 @@ function( app, ZeegaViewer, ZeegaCardView ) {
                 this.more = false;
                 $(".footer").show();
             }
+            
             return response.projects;
         }
 

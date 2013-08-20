@@ -1,15 +1,12 @@
 define([
-    // Application.
     "app",
-
-    // Modules.
     "modules/initializer"
 ],
 
 function(app, Initializer) {
 
-    // Defining the application router, you can attach sub routers here.
     var Router = Backbone.Router.extend({
+
         routes: {
             "": "index",
             "@:username": "profile",
@@ -17,19 +14,23 @@ function(app, Initializer) {
         },
 
         index: function() {
-            app.context = "Index";
+            app.context = "index";
+            app.relativeBase = "";
             initialize();
         },
 
         profile: function( username ) {
-            app.context = "Profile";
+            app.context = "profile";
+            app.relativeBase = "";
             app.metadata.localPath = "@" + username;
             initialize();
         },
 
         tag: function( tag ) {
-            app.context = "Tag";
+            app.context = "tag";
+            app.relativeBase = "../";
             app.metadata.localPath = "tag/" + tag;
+            app.tags = tag;
             initialize();
         }
 

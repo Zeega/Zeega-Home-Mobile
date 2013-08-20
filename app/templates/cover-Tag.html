@@ -1,18 +1,12 @@
-<div class="cover" 
-        <% if ( background_image_url != "") { %>
-            style ="background-image:url(<%= background_image_url %>)" 
-        <% } %>
-    >
-    <div class="profile-token-large" 
-        <% if ( thumbnail_url !="") { %>
-        style="background-image:url(<%= thumbnail_url %>)"
-        <% } %>
-    ></div>
-
-    <span class="headline">
-        <h2 class="display-name"><%= display_name %></h2>
-        <h3 class="username"><small>@<%= username %></small></h3>
-        <p class="bio"><%= bio %></p>
+<div class="cover homepage" >
+    <span class="tagline">
+      <h2>Make the web you want</h2>
     </span>
-    
+</div>
+<div class="tag-links">
+    <ul>
+        <% _.each( tags, function( tag ) { %>
+        <li><a href="/tag/<%= tag %>">#<%= tag %></a></li>
+        <% }) %>
+    </ul>
 </div>

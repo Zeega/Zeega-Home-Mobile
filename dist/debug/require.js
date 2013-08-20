@@ -386,7 +386,65 @@ var requirejs, require, define;
 
 this["JST"] = this["JST"] || {};
 
-this["JST"]["app/templates/feed.html"] = function(obj){
+this["JST"]["app/templates/cover-index.html"] = function(obj){
+var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
+with(obj||{}){
+__p+='<div class="cover homepage" >\n    <span class="tagline">\n      <h2>Make the web you want</h2>\n    </span>\n</div>\n<div class="tag-links">\n    <ul>\n        ';
+ _.each( tags, function( tag ) { 
+;__p+='\n        <li><a href="/tag/'+
+( tag )+
+'">#'+
+( tag )+
+'</a></li>\n        ';
+ }) 
+;__p+='\n    </ul>\n</div>';
+}
+return __p;
+};
+
+this["JST"]["app/templates/cover-profile.html"] = function(obj){
+var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
+with(obj||{}){
+__p+='<div class="cover" \n    ';
+ if ( background_image_url != "") { 
+;__p+='\n        style ="background-image:url('+
+( background_image_url )+
+')" \n    ';
+ } 
+;__p+='\n>\n    <div class="profile-token-large" \n        ';
+ if ( thumbnail_url !="") { 
+;__p+='\n        style="background-image:url('+
+( thumbnail_url )+
+')"\n        ';
+ } 
+;__p+='\n    ></div>\n\n    <div class="headline">\n        <div class="headline-inner">\n            <h2 class="display-name">'+
+( display_name )+
+'</h2>\n            <h3 class="username">@'+
+( username )+
+'</h3>\n            <p class="bio">'+
+( bio )+
+'</p>\n        </div>\n    </div>\n\n</div>';
+}
+return __p;
+};
+
+this["JST"]["app/templates/cover-tag.html"] = function(obj){
+var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
+with(obj||{}){
+__p+='<div class="cover homepage" >\n    <span class="tagline">\n      <h2>Make the web you want</h2>\n    </span>\n</div>\n<div class="tag-links">\n    <ul>\n        ';
+ _.each( tags, function( tag ) { 
+;__p+='\n        <li><a href="/tag/'+
+( tag )+
+'">#'+
+( tag )+
+'</a></li>\n        ';
+ }) 
+;__p+='\n    </ul>\n</div>';
+}
+return __p;
+};
+
+this["JST"]["app/templates/feed-view.html"] = function(obj){
 var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
 with(obj||{}){
 __p+='<h2>'+
@@ -428,52 +486,10 @@ __p+='\n    <span class="tags">\n        <h1>Explore more Zeegas...  <br>\n     
 return __p;
 };
 
-this["JST"]["app/templates/home-cover.html"] = function(obj){
-var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
-with(obj||{}){
-__p+='<div class="cover homepage" >\n    <span class="tagline">\n      <h2>Make the web you want</h2>\n    </span>\n</div>';
-}
-return __p;
-};
-
 this["JST"]["app/templates/layout-main.html"] = function(obj){
 var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
 with(obj||{}){
 __p+='<div class="cover-wrapper"></div>\n<div class="ZEEGA-content-wrapper">\n    <div class="sidebar-wrapper"></div>\n    <div class="content"></div>\n     <span class="scroll-to-top hidden" >\n            <h1>\n                <a class="btnz" href="#" > ↑ </a>\n            </h1>\n      </span>\n</div>';
-}
-return __p;
-};
-
-this["JST"]["app/templates/profile-cover.html"] = function(obj){
-var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
-with(obj||{}){
-__p+='<div class="cover" \n    ';
- if ( background_image_url != "") { 
-;__p+='\n        style ="background-image:url('+
-( background_image_url )+
-')" \n    ';
- } 
-;__p+='\n>\n    <div class="profile-token-large" \n        ';
- if ( thumbnail_url !="") { 
-;__p+='\n        style="background-image:url('+
-( thumbnail_url )+
-')"\n        ';
- } 
-;__p+='\n    ></div>\n\n    <span class="headline">\n        <h2 class="display-name">'+
-( display_name )+
-'</h2>\n        <h3 class="username"><small>@'+
-( username )+
-'</small></h3>\n        <p class="bio">'+
-( bio )+
-'</p>\n    </span>\n\n    ';
- if ( editable ) { 
-;__p+='\n        <ul class="bottom-menu">\n            <li>\n                <a href="#" class="edit-bio btnz btnz-light">edit profile</a>\n            </li>\n            <li>\n                <a href="#" class="save-bio btnz btnz-green">save</a>\n            </li>\n            <li>\n                <a href="/settings" data-bypass="true" class="settings"></a>\n            </li>\n        </ul>\n    ';
- } 
-;__p+='\n\n</div>\n\n';
- if ( editable ) { 
-;__p+='\n    <div class="profile-image-inputs">\n        <i class="icon-chevron-left"></i> Profile Image <input type="file" class="profile-image" name="profile-image" size="chars">\n        <i class="icon-chevron-up"></i> Background Image <input type="file" class="background-image" name="background-image" size="chars"> \n    </div>\n';
- } 
-;__p+='\n';
 }
 return __p;
 };
@@ -506,6 +522,54 @@ __p+='<div class="about" />\n    \n    <div class="logo-wrapper"><span class="lo
 'tag/zeegacard" class="tag-link" name="zeegacard">#zeegacard</a>\n        <a data-bypass="true" href="'+
 (path )+
 'tag/todayinzeega" class="tag-link" name="todayinzeega">#dailyzeega</a>\n\n    </h2>\n</div>';
+}
+return __p;
+};
+
+this["JST"]["app/templates/zeega-card.html"] = function(obj){
+var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
+with(obj||{}){
+__p+='<div class="user-meta">\n  <a data-bypass="true" class="profile-link" href="'+
+(path )+
+'profile/'+
+(user.id )+
+'" >\n    <div class="user-token token-medium" style="background-image: url('+
+( user.thumbnail_url )+
+');"></div>\n    <div class="username">'+
+(user.display_name)+
+'</div>\n  </a>\n</div>\n\n<div class="cover-image" style="\n    ';
+ if( cover_image != "" ) { 
+;__p+='\n      background-image: url('+
+(cover_image )+
+');\n    ';
+ } 
+;__p+='\n    ">\n  <span class="playbutton"></span>\n  <div class="static"></div>\n</div>\n\n<div class="project-meta">\n  <div class="social-stats">';
+ if( favorite_count ) { 
+;__p+='<i class=\'icon-heart\'></i> '+
+( favorite_count )+
+' ';
+ if( favorite_count == 1 ) { 
+;__p+='favorite';
+ } else { 
+;__p+='favorites';
+ } 
+;__p+=' ';
+ } 
+;__p+='<i class=\'icon-play\'></i> '+
+( views )+
+' ';
+ if( views == 1 ) { 
+;__p+='view';
+ } else { 
+;__p+='views';
+ } 
+;__p+='</div>\n  ';
+ if ( title !== "" ) { 
+;__p+='\n    <div class="caption">\n      <i class=\'icon-comment\'></i> '+
+( title )+
+'\n    </div>\n  ';
+ } 
+;__p+='\n</div>';
 }
 return __p;
 };
@@ -17439,83 +17503,45 @@ define('app',[
     "backbone.layoutmanager"
 ], function() {
 
-    var meta = $("meta[name=zeega]");
-
-    // Provide a global location to place configuration settings and module
-    // creation.
     var app = {
-        // The root path to run the application.
+        tags: "",
+
         metadata: $("meta[name=zeega]").data(),
         root: $("meta[name=zeega]").data("root"),
+
         emit: function( event, args ) {
             // other things can be done here as well
             this.trigger( event, args );
         }
-
     };
 
-    // Localize or create a new JavaScript Template object.
     var JST = window.JST = window.JST || {};
 
-
-    // Curry the |set| method with a { silent: true } version
-    // to avoid repetitious boilerplate code throughout project
-    Backbone.Model.prototype.put = function() {
-        var args = [].slice.call( arguments ).concat([ { silent: true } ]);
-        return this.set.apply( this, args );
-    };
-        
-    // Configure LayoutManager with Backbone Boilerplate defaults.
     Backbone.LayoutManager.configure({
-        // Allow LayoutManager to augment Backbone.View.prototype.
         manage: true,
 
         prefix: "app/templates/",
 
-        fetch: function(path) {
-            // Concatenate the file extension.
+        fetch: function( path ) {
             path = path + ".html";
 
-            // If cached, use the compiled template.
             if (JST[path]) {
                 return JST[path];
             }
 
-            // Put fetch into `async-mode`.
             var done = this.async();
 
-            // Seek out the template asynchronously.
-            $.get(app.root + path, function(contents) {
+            $.get( app.relativeBase + app.metadata.root + path, function(contents) {
                 done(JST[path] = _.template(contents));
             });
         }
     });
 
-    // Mix Backbone.Events, modules, and layout management into the app object.
     return _.extend(app, {
-
         Backbone: Backbone,
-        // Create a custom object with a nested Views object.
-        module: function(additionalProps) {
-            return _.extend({ Views: {} }, additionalProps);
-        },
-
-        $: jQuery,
-
-        // Helper for using layouts.
-        useLayout: function(options) {
-            // Create a new Layout with options.
-            var layout = new Backbone.Layout(_.extend({
-                el: "body"
-            }, options));
-
-            // Cache the refererence.
-            return this.layout = layout;
-        }
+        $: jQuery
     }, Backbone.Events);
-
 });
-
 define('modules/sidebar',[
     "app",
     "backbone"
@@ -17528,6 +17554,7 @@ function( app ) {
 
         template: "sidebar",
         className: "sidebar",
+
         serialize: function() {
             return  _.extend( app.metadata,
                 {
@@ -17547,187 +17574,17 @@ function( app ) {
 
 });
 
-define('modules/zeega-viewer',[
+define('modules/feed.view',[
     "app",
     "backbone"
 ],
 
 function( app ) {
 
-
-    return Backbone.Layout.extend({
-
-        template: "zeega-viewer",
-        className: "zeega-viewer",
-        
-        events:{
-            "click":"close"
-        },
-
-        initialize: function(){
-            this.url = window.location.href;
-            $(window).keydown($.proxy(function( e ){this.onKeydown( e );}, this) );
-        },
-        afterRender: function(){
-            this.$("#viewer-iframe").load($.proxy(function( ){this.onViewerLoad( );}, this));
-        },
-
-        close: function() {
-            window.history.pushState("", "Zeega", this.url );
-            this.$el.remove();
-            $(window).unbind("keydown");
-        },
-
-        onKeydown: function(e){
-            if (e.keyCode == 27){
-                this.close();
-            }
-        },
-        
-        onViewerLoad: function(){
-            //var id = $('#viewer-iframe').attr('src').split('/')[$('#viewer-iframe').attr('src').split('/').length -1 ];
-            
-            window.history.pushState("", "", "/" + app.metadata.directory + this.model.id );
-        },
-
-        serialize: function() {
-            return {
-                path: "https:" + app.metadata.hostname + app.metadata.directory + this.model.id
-            };
-        }
-    });
-
-
-});
-
-define('modules/zeega',[
-    "app",
-    "modules/zeega-viewer",
-    "backbone"
-],
-
-function( app, ZeegaViewer ) {
-
-
-    Zeega = {};
-    
-    Zeega.Item = Backbone.Model.extend({
-        url: function(){
-            var https = app.metadata.api.replace("https", "http").replace("http","https");
-            return https + "projects/" + this.id;
-        },
-        initialize: function(){
-            this.card = new Zeega.View({ model: this });
-        }
-    });
-
-    Zeega.Collection = Backbone.Collection.extend({
-
-        model: Zeega.Item,
-        page: 1,
-        tags: null,
-        user: null,
-        limit: 10,
-
-        initialize: function( options ){
-            _.extend( this, options );
-        },
-        
-        url: function() {
-            var url =  app.metadata.api + "projects/search?limit=" + this.limit + "&page=" + this.page;
- 
-            if( this.profileId !== "" ){
-                url += "&user=" + this.profileId;
-                url += "&sort=date-created-desc";
-            }
-            else if( this.tags !== "" && this.tags !== "realtime" ){
-                url += "&tags=" + this.tags;
-                url += "&sort=date-tags-updated-desc";
-            }
-
-            return url;
-        },
-
-        parse: function( response ) {
-            if( response.projects.length == this.limit ){
-                this.more = true;
-            } else {
-                this.more = false;
-                $(".footer").show();
-            }
-            return response.projects;
-        }
-
-    });
-
-    Zeega.View = Backbone.Layout.extend({
-
-        template: "zeega",
-        className: "zeega-card",
-        
-        serialize: function() {
-            return _.extend({
-                    path: "http:" + app.metadata.hostname + app.metadata.directory
-                },
-                this.model.toJSON()
-            );
-        },
-
-        events:{
-            "click article":"onPlay",
-            "click .delete-zeega": "deleteZeega"
-        },
-
-        onPlay: function( e ){
-            if( e.target.className != "profile-link" && e.target.className != "profile-token"){
-                var zeegaViewer = new ZeegaViewer({ model: this.model });
-
-                $("body").append(zeegaViewer.render().view.el);
-
-                //window.history.pushState("", this.model.get("title"), "/" + app.metadata.directory + this.model.id );
-
-
-
-                return false;
-            }
-
-        },
-
-        deleteZeega: function() {
-            if (confirm("Delete your Zeega?")) {
-                app.emit("delete-zeega");
-                this.$el.slideUp(function() {
-                    this.remove();
-                    this.model.destroy();
-                }.bind(this));
-            }
-
-            return false;
-        }
-    });
-
-
-    // Required, return the module for AMD compliance
-    return Zeega;
-
-});
-
-define('modules/feed',[
-    "app",
-    "modules/zeega",
-    "backbone"
-],
-
-function( app, Zeega ) {
-
     return Backbone.View.extend({
 
-        template: "feed",
+        template: "feed-view",
         className: "ZEEGA-feed",
-
-        events: {
-            "click .scroll-to-top": function(){ window.scrollTo(0,1); }
-        },
 
         initialize: function(){
 
@@ -17744,8 +17601,8 @@ function( app, Zeega ) {
         serialize: function(){
             var headline = "Recent Zeegas";
 
-            if( app.metadata.tags !== "" && app.metadata.tags !== "homepage" ){
-                headline =  "#" + app.metadata.tags;
+            if( app.tags !== "" && app.tags !== "homepage" ){
+                headline =  "#" + app.tags;
             }
 
             return { headline: headline };
@@ -17768,21 +17625,15 @@ function( app, Zeega ) {
         },
 
         onScroll: function(e){
+            var loc = $(window).scrollTop() + $(window).innerHeight(),
+                height = $("body")[0].scrollHeight;
 
-            var loc = $(window).scrollTop() + $(window).innerHeight();
-            var height = $("body")[0].scrollHeight;
-            if( height !== 0 && loc >= height - 500 && this.collection.more ){
+            if( height !== 0 && loc >= height - 500 && this.collection.more ) {
                 this.$el.append("<div class='zeega-card'><article class='loading'></article> </div>");
                 this.collection.more = false;
                 this.collection.page ++;
                 this.collection.fetch();
             }
-            if( $(window).scrollTop() > 1000 && $(".scroll-to-top.hidden")[0]){
-                $(".scroll-to-top").removeClass("hidden");
-            } else if( $(window).scrollTop() < 1000 && !$(".scroll-to-top.hidden")[0] ) {
-                $(".scroll-to-top").addClass("hidden");
-            }
-            
         }
 
 
@@ -18138,7 +17989,7 @@ function( app, Zeega ) {
   return Spinner
 
 }));
-define('modules/cover',[
+define('modules/cover.view',[
     "app",
     "libs/spin",
     "backbone"
@@ -18146,160 +17997,30 @@ define('modules/cover',[
 
 function( app, Spinner ) {
 
-    var User = Backbone.Model.extend({
+    return Backbone.View.extend({
 
-        url: function() {
-            var https = app.metadata.api.replace("https","http").replace("http","https");
-            return https + "users/" + this.id;
-        }
-
-    });
-
-    var Cover = {};
-
-    Cover.HomeView = Backbone.View.extend({
-        template: "home-cover",
-        className: "home-cover"
-    });
-
-    Cover.ProfileView = Backbone.View.extend({
+        tagArray: [
+            "bestof",
+            "stories",
+            "funny",
+            "music"
+        ],
         
-        template: "profile-cover",
-        className: "profile-cover",
-
-        initialize: function() {
-            this.model = new User( $.parseJSON(window.profileData) );
+        className: function() {
+            return "cover-" + app.context;
         },
 
         serialize: function() {
-            return this.model.toJSON();
+            var ser = $.parseJSON(window.profileData) || {};
+
+            return _.extend({ tags: this.getTags() }, ser );
         },
 
-        events: {
-            "click .edit-bio": "editBio",
-            "click .save-bio": "saveBio",
-
-            "keydown .display-name": "onKeydown",
-            "keydown .bio": "onKeydown",
-
-            "change input": "onChangeInput"
-        },
-
-        onKeydown: function( e ) {
-            if ( e.which == 13 ) {
-                this.$(".display-name, .bio").blur();
-
-                return false;
-            }
-        },
-
-        editBio: function() {
-            this.$(".display-name, .bio")
-                .addClass("editing")
-                .prop("contenteditable", "true");
-            this.$(".profile-image-inputs").slideDown();
-
-            this.$(".edit-bio").hide();
-            this.$(".save-bio").show();
-
-            return false;
-        },
-
-        saveBio: function() {
-            this.$(".display-name, .bio")
-                .removeClass("editing")
-                .prop("contenteditable", "false");
-            this.$(".profile-image-inputs").slideUp();
-
-            this.$(".save-bio").hide();
-            this.$(".edit-bio").show();
-
-            this.model.save({
-                "display_name": this.$(".display-name").text(),
-                bio: this.$(".bio").text()
-            });
-
-            return false;
-        },
-
-        onChangeInput: function( event ) {
-            var fileInput = event.target,
-                imageData,
-                sizes;
-
-            imageData = new FormData();
-            imageData.append( "file", fileInput.files[0] );
-
-            var updateProgress = function( e ){};
-
-            $(event.target).fadeTo( 250, 0.1);
-            var opts = {
-                lines: 13, // The number of lines to draw
-                length: 5, // The length of each line
-                width: 2, // The line thickness
-                radius: 10, // The radius of the inner circle
-                corners: 1, // Corner roundness (0..1)
-                rotate: 0, // The rotation offset
-                direction: 1, // 1: clockwise, -1: counterclockwise
-                color: '#FFF', // #rgb or #rrggbb
-                speed: 1, // Rounds per second
-                trail: 60, // Afterglow percentage
-                shadow: true, // Whether to render a shadow
-                hwaccel: false, // Whether to use hardware acceleration
-                className: 'spinner', // The CSS class to assign to the spinner
-                zIndex: 2e9, // The z-index (defaults to 2000000000)
-                top: 'auto', // Top position relative to parent in px
-                left: 'auto' // Left position relative to parent in px
-            };
-            
-            if ( $(event.target).hasClass("profile-image") ) {
-                sizes ="4";
-                this.spinner = new Spinner(opts).spin( $(".profile-token-large")[0]);
-            } else {
-                sizes = "7";
-                this.spinner = new Spinner(opts).spin( $(".cover")[0]);
-            }
-
-
-            $.ajax({
-                url: app.metadata.mediaServer + "image?sizes="+sizes,
-                type: "POST",
-                data: imageData,
-                dataType: "json",
-                processData: false,
-                contentType: false,
-                fileElementId: "imagefile",
-                
-                xhr: function() {  // custom xhr
-                    myXhr = $.ajaxSettings.xhr();
-                    if(myXhr.upload){ // check if upload property exists
-                        myXhr.upload.addEventListener('progress', updateProgress, false); // for handling the progress of the upload
-                    }
-                    return myXhr;
-                },
-                
-                success: function( data ) {
-                    var attr = {};
-
-                    if ( $(event.target).hasClass("profile-image") ) {
-                        attr.thumbnail_url = data.image_url_4;
-                        this.$(".profile-token-large").css("background-image", "url(" + data.image_url_4 + ")");
-                    } else {
-                        attr.background_image_url = data.fullsize_url;
-                        this.$(".cover").css("background-image", "url(" + data.fullsize_url + ")");
-                    }
-
-                    $(event.target).fadeTo( 500, 1);
-                    this.spinner.stop();
-                    this.model.save( attr );
-                }.bind(this)
-            });
-
+        getTags: function() {
+            return this.tagArray;
         }
 
     });
-
-    return Cover;
 
 });
 define('modules/footer',[
@@ -18326,39 +18047,197 @@ function( app ) {
 
 });
 
- define('modules/layout-main',[
+define('modules/zeega-viewer',[
     "app",
-    "modules/sidebar",
-    "modules/feed",
-    "modules/cover",
-    "modules/footer",
-    "modules/zeega",
     "backbone"
 ],
 
-function( app, SidebarView, FeedView, Cover, FooterView, Zeega ) {
+function( app ) {
 
-    
+
+    return Backbone.Layout.extend({
+
+        template: "zeega-viewer",
+        className: "zeega-viewer",
+        
+        events:{
+            "click":"close"
+        },
+
+        initialize: function(){
+            this.url = window.location.href;
+            $(window).keydown($.proxy(function( e ){this.onKeydown( e );}, this) );
+        },
+        afterRender: function(){
+            this.$("#viewer-iframe").load($.proxy(function( ){this.onViewerLoad( );}, this));
+        },
+
+        close: function() {
+            window.history.pushState("", "Zeega", this.url );
+            this.$el.remove();
+            $(window).unbind("keydown");
+        },
+
+        onKeydown: function(e){
+            if (e.keyCode == 27){
+                this.close();
+            }
+        },
+        
+        onViewerLoad: function(){
+            //var id = $('#viewer-iframe').attr('src').split('/')[$('#viewer-iframe').attr('src').split('/').length -1 ];
+            
+            window.history.pushState("", "", "/" + app.metadata.directory + this.model.id );
+        },
+
+        serialize: function() {
+            return {
+                path: "https:" + app.metadata.hostname + app.metadata.directory + this.model.id
+            };
+        }
+    });
+
+
+});
+
+define('modules/zeega-card.view',[
+    "app",
+    "modules/zeega-viewer",
+    "backbone"
+],
+
+function( app, ZeegaViewer ) {
+
+    return Backbone.Layout.extend({
+
+        tagName: "article",
+        template: "zeega-card",
+        className: "zeega-card",
+
+        
+        serialize: function() {
+            return _.extend({
+                    path: "http:" + app.metadata.hostname + app.metadata.directory
+                },
+                this.model.toJSON()
+            );
+        },
+
+        events:{
+            "click .cover-image": "onPlay",
+            "click .delete-zeega": "deleteZeega"
+        },
+
+        onPlay: function( e ) {
+            var zeegaViewer = new ZeegaViewer({ model: this.model });
+
+            $("body").append(zeegaViewer.render().view.el);
+            //window.history.pushState("", this.model.get("title"), "/" + app.metadata.directory + this.model.id );
+            return false;
+
+        },
+
+        deleteZeega: function() {
+            if (confirm("Delete your Zeega?")) {
+                app.emit("delete-zeega");
+                this.$el.slideUp(function() {
+                    this.remove();
+                    this.model.destroy();
+                }.bind(this));
+            }
+
+            return false;
+        }
+    });
+
+});
+
+define('modules/zeega-projects.collection',[
+    "app",
+    "modules/zeega-viewer",
+    "modules/zeega-card.view",
+    "backbone"
+],
+
+function( app, ZeegaViewer, ZeegaCardView ) {
+
+    var ZeegaItem = Backbone.Model.extend({
+        
+        url: function(){
+            var https = app.metadata.api.replace("https", "http").replace("http","https");
+
+            return https + "projects/" + this.id;
+        },
+        
+        initialize: function(){
+            this.card = new ZeegaCardView({ model: this });
+        }
+    });
+
+    return Backbone.Collection.extend({
+
+        model: ZeegaItem,
+        page: 1,
+        tags: null,
+        user: null,
+        limit: 10,
+
+        initialize: function( options ){
+            _.extend( this, options );
+        },
+        
+        url: function() {
+            var url =  app.metadata.api + "projects/search?limit=" + this.limit + "&page=" + this.page;
+ 
+            if( this.profileId !== "" ){
+                url += "&user=" + this.profileId;
+                url += "&sort=date-created-desc";
+            }
+            else if( this.tags !== "" && this.tags !== "realtime" ){
+                url += "&tags=" + this.tags;
+                url += "&sort=date-tags-updated-desc";
+            }
+
+            return url;
+        },
+
+        parse: function( response ) {
+            if( response.projects.length == this.limit ){
+                this.more = true;
+            } else {
+                this.more = false;
+                $(".footer").show();
+            }
+            
+            return response.projects;
+        }
+
+    });
+
+});
+
+ define('modules/layout-main',[
+    "app",
+    "modules/sidebar",
+    "modules/feed.view",
+    "modules/cover.view",
+    "modules/footer",
+    "modules/zeega-projects.collection",
+    "backbone"
+],
+
+function( app, SidebarView, FeedView, CoverView, FooterView, ZeegaCollection ) {
+
     return Backbone.Layout.extend({
 
         el: "#main",
         template: "layout-main",
 
         beforeRender: function(){
-            
-            zeegas = new Zeega.Collection( app.metadata );
-            
-            if( _.isUndefined( window.profileData )){
-                this.insertView( ".cover-wrapper", new Cover.HomeView() );
-            } else {
-                this.insertView( ".cover-wrapper", new Cover.ProfileView() );
-            }
-            
-            
+            zeegas = new ZeegaCollection( app.metadata );
 
-            this.insertView( ".sidebar-wrapper", new SidebarView() );
+            this.insertView( ".cover-wrapper", new CoverView({ template: "cover-" + app.context }) );
             this.insertView( ".content", new FeedView({ collection: zeegas }) );
-            this.insertView( ".content", new FooterView() );
         }
     });
 
@@ -18558,16 +18437,18 @@ function( app, MainLayout, Analytics) {
     return Backbone.Model.extend({
         
         initialize: function() {
-            app.analytics = new Analytics();
+            this.initAnalytics();
+            this.insertLayout();
+        },
 
+        initAnalytics: function() {
+            app.analytics = new Analytics();
             app.analytics.setGlobals({
                 userId: app.metadata.userId,
                 app: "community",
                 context: "web",
                 path: app.metadata.path
             });
-
-            this.insertLayout();
         },
 
         insertLayout: function() {
@@ -18580,17 +18461,14 @@ function( app, MainLayout, Analytics) {
 });
 
 define('router',[
-    // Application.
     "app",
-
-    // Modules.
     "modules/initializer"
 ],
 
 function(app, Initializer) {
 
-    // Defining the application router, you can attach sub routers here.
     var Router = Backbone.Router.extend({
+
         routes: {
             "": "index",
             "@:username": "profile",
@@ -18598,16 +18476,23 @@ function(app, Initializer) {
         },
 
         index: function() {
+            app.context = "index";
+            app.relativeBase = "";
             initialize();
         },
 
-        profile: function( username ){
+        profile: function( username ) {
+            app.context = "profile";
+            app.relativeBase = "";
             app.metadata.localPath = "@" + username;
             initialize();
         },
 
-        tag: function( tag ){
+        tag: function( tag ) {
+            app.context = "tag";
+            app.relativeBase = "../";
             app.metadata.localPath = "tag/" + tag;
+            app.tags = tag;
             initialize();
         }
 

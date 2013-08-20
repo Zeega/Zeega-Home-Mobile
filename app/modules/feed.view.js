@@ -25,8 +25,8 @@ function( app ) {
         serialize: function(){
             var headline = "Recent Zeegas";
 
-            if( app.metadata.tags !== "" && app.metadata.tags !== "homepage" ){
-                headline =  "#" + app.metadata.tags;
+            if( app.tags !== "" && app.tags !== "homepage" ){
+                headline =  "#" + app.tags;
             }
 
             return { headline: headline };

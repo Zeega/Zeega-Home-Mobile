@@ -7,13 +7,26 @@ define([
 function( app, Spinner ) {
 
     return Backbone.View.extend({
+
+        tagArray: [
+            "bestof",
+            "stories",
+            "funny",
+            "music"
+        ],
         
         className: function() {
-            return "cover-" + app.context.toLowerCase();
+            return "cover-" + app.context;
         },
 
         serialize: function() {
-            return $.parseJSON(window.profileData) || {};
+            var ser = $.parseJSON(window.profileData) || {};
+
+            return _.extend({ tags: this.getTags() }, ser );
+        },
+
+        getTags: function() {
+            return this.tagArray;
         }
 
     });

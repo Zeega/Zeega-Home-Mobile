@@ -3,3 +3,10 @@
       <h2>Make the web you want</h2>
     </span>
 </div>
+<div class="tag-links">
+    <ul>
+        <% _.each( tags, function( tag ) { %>
+        <li><a href="/tag/<%= tag %>">#<%= tag %></a></li>
+        <% }) %>
+    </ul>
+</div>
