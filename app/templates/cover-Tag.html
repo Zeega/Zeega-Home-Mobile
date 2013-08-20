@@ -1,0 +1,18 @@
+<div class="cover" 
+        <% if ( background_image_url != "") { %>
+            style ="background-image:url(<%= background_image_url %>)" 
+        <% } %>
+    >
+    <div class="profile-token-large" 
+        <% if ( thumbnail_url !="") { %>
+        style="background-image:url(<%= thumbnail_url %>)"
+        <% } %>
+    ></div>
+
+    <span class="headline">
+        <h2 class="display-name"><%= display_name %></h2>
+        <h3 class="username"><small>@<%= username %></small></h3>
+        <p class="bio"><%= bio %></p>
+    </span>
+    
+</div>
