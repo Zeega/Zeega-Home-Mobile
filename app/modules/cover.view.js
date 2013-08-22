@@ -22,7 +22,7 @@ function( app, Spinner ) {
         serialize: function() {
             var ser = $.parseJSON(window.profileData) || {};
 
-            return _.extend({ tags: this.getTags() }, ser );
+            return _.extend({ tags: this.getTags(), base: app.getBaseUrl() }, ser );
         },
 
         getTags: function() {

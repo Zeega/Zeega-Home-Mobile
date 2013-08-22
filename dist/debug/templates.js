@@ -5,7 +5,9 @@ var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
 with(obj||{}){
 __p+='<div class="cover homepage" >\n    <span class="tagline">\n      <h2>Make the web you want</h2>\n    </span>\n</div>\n<div class="tag-links">\n    <ul>\n        ';
  _.each( tags, function( tag ) { 
-;__p+='\n        <li><a href="/tag/'+
+;__p+='\n        <li><a href="'+
+( base )+
+'tag/'+
 ( tag )+
 '">#'+
 ( tag )+
@@ -47,7 +49,9 @@ var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
 with(obj||{}){
 __p+='<div class="cover homepage" >\n    <span class="tagline">\n      <h2>Make the web you want</h2>\n    </span>\n</div>\n<div class="tag-links">\n    <ul>\n        ';
  _.each( tags, function( tag ) { 
-;__p+='\n        <li><a href="/tag/'+
+;__p+='\n        <li><a href="'+
+( base )+
+'tag/'+
 ( tag )+
 '">#'+
 ( tag )+
@@ -144,20 +148,24 @@ this["JST"]["app/templates/zeega-card.html"] = function(obj){
 var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
 with(obj||{}){
 __p+='<div class="user-meta">\n  <a data-bypass="true" class="profile-link" href="'+
-(path )+
+( base )+
 'profile/'+
 (user.id )+
 '" >\n    <div class="user-token token-medium" style="background-image: url('+
 ( user.thumbnail_url )+
 ');"></div>\n    <div class="username">'+
 (user.display_name)+
-'</div>\n  </a>\n</div>\n\n<div class="cover-image" style="\n    ';
+'</div>\n  </a>\n</div>\n\n<a href="'+
+( base )+
+''+
+( id )+
+'" class="cover-image" style="\n    ';
  if( cover_image != "" ) { 
 ;__p+='\n      background-image: url('+
 (cover_image )+
 ');\n    ';
  } 
-;__p+='\n    ">\n  <span class="playbutton"></span>\n  <div class="static"></div>\n</div>\n\n<div class="project-meta">\n  <div class="social-stats">';
+;__p+='\n    ">\n  <span class="playbutton"></span>\n  <div class="static"></div>\n</a>\n\n<div class="project-meta">\n  <div class="social-stats">';
  if( favorite_count ) { 
 ;__p+='<i class=\'icon-heart\'></i> '+
 ( favorite_count )+
