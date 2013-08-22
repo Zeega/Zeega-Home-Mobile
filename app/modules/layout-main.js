@@ -20,6 +20,10 @@ function( app, SidebarView, FeedView, CoverView, FooterView, ZeegaCollection ) {
 
             this.insertView( ".cover-wrapper", new CoverView({ template: "cover-" + app.context }) );
             this.insertView( ".content", new FeedView({ collection: zeegas }) );
+        },
+
+        afterRender: function() {
+            window.scrollTo(0, 1);
         }
     });
 

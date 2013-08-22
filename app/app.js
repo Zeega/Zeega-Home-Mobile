@@ -9,7 +9,7 @@ define([
         root: $("meta[name=zeega]").data("root"),
 
         getBaseUrl: function() {
-            return "http:" + this.metadata.hostname + app.metadata.directory
+            return "http:" + this.metadata.hostname + app.metadata.directory;
         },
 
         emit: function( event, args ) {

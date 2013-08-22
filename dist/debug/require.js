@@ -17518,7 +17518,7 @@ define('app',[
         root: $("meta[name=zeega]").data("root"),
 
         getBaseUrl: function() {
-            return "http:" + this.metadata.hostname + app.metadata.directory
+            return "http:" + this.metadata.hostname + app.metadata.directory;
         },
 
         emit: function( event, args ) {
@@ -18133,7 +18133,7 @@ function( app, ZeegaViewer ) {
                 },
                 this.model.toJSON()
             );
-        },
+        }
 
     });
 
@@ -18225,6 +18225,10 @@ function( app, SidebarView, FeedView, CoverView, FooterView, ZeegaCollection ) {
 
             this.insertView( ".cover-wrapper", new CoverView({ template: "cover-" + app.context }) );
             this.insertView( ".content", new FeedView({ collection: zeegas }) );
+        },
+
+        afterRender: function() {
+            window.scrollTo(0, 1);
         }
     });
 

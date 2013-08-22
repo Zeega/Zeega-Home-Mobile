@@ -19,7 +19,7 @@ function( app, ZeegaViewer ) {
                 },
                 this.model.toJSON()
             );
-        },
+        }
 
     });
 
