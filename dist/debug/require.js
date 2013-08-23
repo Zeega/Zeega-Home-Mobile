@@ -17536,7 +17536,7 @@ define('app',[
 
         fetch: function( path ) {
             path = "app/templates/" + path + ".html";
-console.log("path", path)
+
             if (JST[path]) {
                 return JST[path];
             }
