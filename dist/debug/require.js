@@ -17532,11 +17532,11 @@ define('app',[
     Backbone.LayoutManager.configure({
         manage: true,
 
-        prefix: "app/templates/",
+        //prefix: "app/templates/",
 
         fetch: function( path ) {
-            path = path + ".html";
-
+            path = "app/templates/" + path + ".html";
+console.log("path", path)
             if (JST[path]) {
                 return JST[path];
             }
