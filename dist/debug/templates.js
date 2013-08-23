@@ -1,6 +1,6 @@
 this["JST"] = this["JST"] || {};
 
-this["JST"]["app/templates/cover-index.html"] = function(obj){
+this["JST"]["app/templates/cover-Index.html"] = function(obj){
 var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
 with(obj||{}){
 __p+='<div class="cover homepage" >\n    <span class="tagline">\n      <h2>Make the web you want</h2>\n    </span>\n</div>\n<div class="tag-links">\n    <ul>\n        ';
@@ -18,7 +18,7 @@ __p+='<div class="cover homepage" >\n    <span class="tagline">\n      <h2>Make 
 return __p;
 };
 
-this["JST"]["app/templates/cover-profile.html"] = function(obj){
+this["JST"]["app/templates/cover-Profile.html"] = function(obj){
 var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
 with(obj||{}){
 __p+='<div class="cover" \n    ';
@@ -44,7 +44,7 @@ __p+='<div class="cover" \n    ';
 return __p;
 };
 
-this["JST"]["app/templates/cover-tag.html"] = function(obj){
+this["JST"]["app/templates/cover-Tag.html"] = function(obj){
 var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
 with(obj||{}){
 __p+='<div class="cover homepage" >\n    <span class="tagline">\n      <h2>Make the web you want</h2>\n    </span>\n</div>\n<div class="tag-links">\n    <ul>\n        ';
@@ -107,7 +107,7 @@ return __p;
 this["JST"]["app/templates/layout-main.html"] = function(obj){
 var __p='';var print=function(){__p+=Array.prototype.join.call(arguments, '')};
 with(obj||{}){
-__p+='<div class="cover-wrapper"></div>\n<div class="ZEEGA-content-wrapper">\n    <div class="sidebar-wrapper"></div>\n    <div class="content"></div>\n     <span class="scroll-to-top hidden" >\n            <h1>\n                <a class="btnz" href="#" > ↑ </a>\n            </h1>\n      </span>\n</div>';
+__p+='<div class="cover-wrapper"></div>\n<div class="ZEEGA-content-wrapper">\n    <div class="sidebar-wrapper"></div>\n    <div class="content"></div>\n</div>';
 }
 return __p;
 };
